@@ -6,7 +6,7 @@ Opinionated Claude Code skills for FP-first development.
 
 ```bash
 # In Claude Code:
-/plugin marketplace add purbo/purbo-skills
+/plugin marketplace add mpurbo/purbo-skills
 /plugin install fp-rust@purbo-skills
 ```
 
