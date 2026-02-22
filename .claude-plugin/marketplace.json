@@ -19,6 +19,18 @@
       "category": "development",
       "tags": ["rust", "functional-programming", "fp", "architecture", "code-review"],
       "strict": true
+    },
+    {
+      "name": "fp-kstream",
+      "source": "./plugins/fp-kstream",
+      "description": "Kafka Streams topology design and implementation using Kafka Stream Algebra (KSA) — deterministic, replay-safe topologies with functional core / imperative shell architecture",
+      "version": "1.0.0",
+      "author": {
+        "name": "Purbo"
+      },
+      "category": "development",
+      "tags": ["kafka", "kafka-streams", "stream-processing", "topology", "functional-programming", "event-driven", "architecture"],
+      "strict": true
     }
   ]
 }
