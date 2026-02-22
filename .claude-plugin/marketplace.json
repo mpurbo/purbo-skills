@@ -1,0 +1,24 @@
+{
+  "name": "purbo-skills",
+  "owner": {
+    "name": "Purbo"
+  },
+  "metadata": {
+    "description": "Opinionated skills for FP-first architecture and development best practices",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "fp-rust",
+      "source": "./plugins/fp-rust",
+      "description": "Functional Programming in Rust — opinionated guidelines for writing idiomatic, FP-first Rust code with functional core / imperative shell architecture",
+      "version": "1.0.0",
+      "author": {
+        "name": "Purbo"
+      },
+      "category": "development",
+      "tags": ["rust", "functional-programming", "fp", "architecture", "code-review"],
+      "strict": true
+    }
+  ]
+}

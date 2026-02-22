@@ -1,0 +1,11 @@
+{
+  "name": "fp-rust",
+  "description": "Functional Programming in Rust — opinionated guidelines for planning, writing idiomatic, FP-first Rust code with functional core / imperative shell architecture, immutability-first patterns, pipeline-oriented programming, dependency rejection, and type-driven design.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Purbo"
+  },
+  "homepage": "https://github.com/purbo/purbo-skills",
+  "license": "MIT",
+  "keywords": ["rust", "functional-programming", "fp", "architecture", "code-review", "guidelines"]
+}
