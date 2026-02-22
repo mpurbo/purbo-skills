@@ -31,6 +31,18 @@
       "category": "development",
       "tags": ["kafka", "kafka-streams", "stream-processing", "topology", "functional-programming", "event-driven", "architecture"],
       "strict": true
+    },
+    {
+      "name": "openspec-progressive",
+      "source": "./plugins/openspec-progressive",
+      "description": "Progressive implementation discipline for OpenSpec changes — structures work into independently reviewable, testable phases with clear contract boundaries and per-phase documentation updates",
+      "version": "1.0.0",
+      "author": {
+        "name": "Purbo"
+      },
+      "category": "development",
+      "tags": ["openspec", "progressive-implementation", "phased-delivery", "contract-first", "tdd", "spec-driven-development"],
+      "strict": true
     }
   ]
 }

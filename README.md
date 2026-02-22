@@ -9,6 +9,7 @@ Opinionated Claude Code skills for FP-first development.
 /plugin marketplace add mpurbo/purbo-skills
 /plugin install fp-rust@purbo-skills
 /plugin install fp-kstream@purbo-skills
+/plugin install openspec-progressive@purbo-skills
 ```
 
 ## Available Skills
@@ -43,15 +44,32 @@ Implement topologies as testable, deterministic code with pure business logic se
 
 **Based on:** [Kafka Stream Algebra v0.5](plugins/fp-kstream/references/KSA.md) — 10 composable recipes covering ingress, enrichment, computation, and egress patterns.
 
+### openspec-progressive
+
+Progressive implementation discipline for [OpenSpec](https://github.com/fission-ai/openspec) changes. Structures work into independently reviewable, testable phases with clear contract boundaries.
+
+**Covers:** phase decomposition in proposals (scope, contracts, gates), task grouping under phase headers, phase checkpoint enforcement during apply, per-phase documentation updates, context management guidance for fresh AI sessions, and anti-rationalization guards.
+
+**Triggers on:** "progressive implementation", "phased implementation", "step-by-step", "implementation phases", "chunked implementation" — or any OpenSpec proposal/tasks/apply workflow where phased delivery is desired.
+
+**Designed to augment** the standard OpenSpec workflow skills (`openspec-new-change`, `openspec-continue-change`, `openspec-apply-change`, `openspec-ff-change`) and composes with `superpowers:test-driven-development` for TDD within each phase.
+
+**Key constraints enforced:**
+- ≤8 tasks per phase, reviewable in ≤30 minutes
+- Contract-first boundaries — Phase N testable with mocks even without Phase N-1
+- Hard stop at phase checkpoints for human review
+- Documentation updated every phase (not deferred to the end)
+
 ## Adding More Skills
 
 This marketplace is structured to hold multiple plugins. To add a new skill:
 
 ```
 plugins/
-├── fp-rust/          <- existing
-├── fp-kstream/       <- existing
-├── your-new-skill/   <- add here
+├── fp-rust/               <- existing
+├── fp-kstream/            <- existing
+├── openspec-progressive/  <- existing
+├── your-new-skill/        <- add here
 │   ├── .claude-plugin/
 │   │   └── plugin.json
 │   └── skills/
