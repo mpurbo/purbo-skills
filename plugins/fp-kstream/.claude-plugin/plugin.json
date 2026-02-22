@@ -1,7 +1,7 @@
 {
   "name": "fp-kstream",
   "description": "Kafka Streams topology design and implementation using Kafka Stream Algebra (KSA) — deterministic, replay-safe topologies with functional core / imperative shell architecture. Two skills: fp-kstream-design for topology planning and fp-kstream-implement for code generation.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": {
     "name": "Purbo"
   },
