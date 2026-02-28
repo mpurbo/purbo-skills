@@ -19,7 +19,7 @@ Implement Kafka Streams topologies as testable, deterministic code where all bus
 Before responding, load the shared reference:
 
 ```
-cat ${SKILL_PATH}/../../references/KSA.md
+cat ${SKILL_PATH}/references/KSA.md
 ```
 
 Pay special attention to §1 Principles and §6 Compliance Checklist.
@@ -27,8 +27,8 @@ Pay special attention to §1 Principles and §6 Compliance Checklist.
 For templates:
 
 ```
-cat ${SKILL_PATH}/../../templates/build.gradle.kts
-cat ${SKILL_PATH}/../../templates/docker-compose.yml
+cat ${SKILL_PATH}/templates/build.gradle.kts
+cat ${SKILL_PATH}/templates/docker-compose.yml
 ```
 
 ---
@@ -294,7 +294,7 @@ fun enrich(tx: Transaction, config: MerchantConfig?): EnrichedTransaction? {
 
 ## Local Development
 
-Docker Compose for local Kafka: `cat ${SKILL_PATH}/../../templates/docker-compose.yml`
+Docker Compose for local Kafka: `cat ${SKILL_PATH}/templates/docker-compose.yml`
 
 ```bash
 docker compose up -d                    # start
@@ -316,7 +316,7 @@ docker compose up -d
 
 ## Build Configuration
 
-Gradle template: `cat ${SKILL_PATH}/../../templates/build.gradle.kts`
+Gradle template: `cat ${SKILL_PATH}/templates/build.gradle.kts`
 
 Key dependencies:
 

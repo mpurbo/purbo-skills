@@ -1,0 +1,11 @@
+{
+  "name": "mermaid-pastel-style",
+  "description": "Consistent pastel color styling for mermaid diagrams — semantic palette with dark text on light fills for documentation, specs, and PRDs.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Purbo"
+  },
+  "homepage": "https://github.com/mpurbo/purbo-skills",
+  "license": "MIT",
+  "keywords": ["mermaid", "diagram", "styling", "pastel", "color-palette", "documentation"]
+}

@@ -5,7 +5,7 @@
   "author": {
     "name": "Purbo"
   },
-  "homepage": "https://github.com/purbo/purbo-skills",
+  "homepage": "https://github.com/mpurbo/purbo-skills",
   "license": "MIT",
   "keywords": ["rust", "functional-programming", "fp", "architecture", "code-review", "guidelines"]
 }

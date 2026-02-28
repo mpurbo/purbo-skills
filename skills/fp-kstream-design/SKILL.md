@@ -19,7 +19,7 @@ Design deterministic, replay-safe, cost-efficient Kafka Streams topologies using
 Before responding, load the shared reference:
 
 ```
-cat ${SKILL_PATH}/../../references/KSA.md
+cat ${SKILL_PATH}/references/KSA.md
 ```
 
 This is the authoritative source for all patterns, principles, and constraints.

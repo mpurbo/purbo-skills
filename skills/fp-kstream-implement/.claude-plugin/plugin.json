@@ -1,0 +1,11 @@
+{
+  "name": "fp-kstream-implement",
+  "description": "Kafka Streams topology implementation using functional core / imperative shell architecture — deterministic, testable code with pure business logic separated from Kafka wiring. Includes code patterns, testing strategy, local dev setup, and Gradle config.",
+  "version": "1.1.0",
+  "author": {
+    "name": "Purbo"
+  },
+  "homepage": "https://github.com/mpurbo/purbo-skills",
+  "license": "MIT",
+  "keywords": ["kafka", "kafka-streams", "kstreams", "topology", "stream-processing", "functional-programming", "event-driven", "implementation"]
+}
