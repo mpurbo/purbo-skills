@@ -185,7 +185,7 @@ Creates detailed per-subsystem technical design specs from a System Spec, with o
 
 #### openspec-config
 
-Configures OpenSpec's `config.yaml` with project context and phase-scoped loading. Run once per project for initial setup, then update the phase context each time you start a new phase.
+Configures OpenSpec's `config.yaml` with project context and phase-scoped loading. Run once per project for initial setup, then update the phase context each time you start a new phase — **before** `opsx:new`, not after.
 
 **Covers:** project context discovery (specs, tech stack, `conventions.md`), skill-to-workflow mapping (apply -> TDD + tech-specific skills), `config.yaml` generation with `context:` and `rules:` sections for valid artifact IDs only (proposal, design, specs, tasks), and phase context switching that loads only the current phase + consumed contracts (~20 lines) instead of the full design spec (~1000 lines).
 
