@@ -113,7 +113,7 @@ flowchart TD
     end
 
     subgraph phase_loop ["Per-Phase Loop"]
-        PhaseCtx["Phase context switch<br/>(~20 lines vs ~1000)"]
+        PhaseCtx["openspec-config<br/>Phase context switch"]
         Init["openspec init"]
         Proposal["proposal"]
         Specs["specs"]
@@ -130,7 +130,7 @@ flowchart TD
     Done["Done"]
 
     Conv --> Config
-    Config --> PhaseCtx
+    Config --> Init
     PhaseCtx --> Init
     Init --> Proposal --> Specs --> Design --> Tasks --> Apply
     Apply --> Gate
