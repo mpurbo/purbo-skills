@@ -147,28 +147,32 @@ wording — the exact text matters because it's what gets injected into artifact
 instructions across sessions. You MAY append project-specific rules after the
 standard ones.
 
+**YAML safety:** Always quote rule strings that contain `: ` (colon-space) —
+YAML interprets unquoted `key: value` as a mapping, not a string. When in doubt,
+quote all rule strings.
+
 ```yaml
 rules:
   proposal:
-    - Scope this proposal to a single phase from the Subsystem Design Spec.
-    - Reference the phase's scope, contracts exposed/consumed, and gate criteria.
-    - Each phase must be reviewable, testable, and contract-bounded.
-    - Include the review tier (gate-only, spot-check, full-review) from the design spec.
+    - "Scope this proposal to a single phase from the Subsystem Design Spec."
+    - "Reference the phase's scope, contracts exposed/consumed, and gate criteria."
+    - "Each phase must be reviewable, testable, and contract-bounded."
+    - "Include the review tier (gate-only, spot-check, full-review) from the design spec."
   specs:
-    - Every requirement MUST have at least one WHEN/THEN scenario.
-    - Scenarios must be directly translatable to TDD test cases.
-    - Reference acceptance criteria (AC-{n}.{y}) from the design spec user stories.
+    - "Every requirement MUST have at least one WHEN/THEN scenario."
+    - "Scenarios must be directly translatable to TDD test cases."
+    - "Reference acceptance criteria (AC-{n}.{y}) from the design spec user stories."
   design:
-    - Follow FP-first architecture: types → pure functions → effects → composition.
-    - Justify decisions with rationale and alternatives considered.
-    - Flag risks with mitigations.
-    - Reference design decisions (D{n}) from the Subsystem Design Spec where applicable.
+    - "Follow FP-first architecture: types → pure functions → effects → composition."
+    - "Justify decisions with rationale and alternatives considered."
+    - "Flag risks with mitigations."
+    - "Reference design decisions (D{n}) from the Subsystem Design Spec where applicable."
   tasks:
-    - Order tasks for TDD — test first, then implementation.
-    - Each task must be completable in one TDD cycle (red-green-refactor).
-    - Include a gate task at the end matching the phase's gate command.
-    - Last task runs verification steps from the phase's verification section.
-    - Last task updates documentation with verification steps.
+    - "Order tasks for TDD — test first, then implementation."
+    - "Each task must be completable in one TDD cycle (red-green-refactor)."
+    - "Include a gate task at the end matching the phase's gate command."
+    - "Last task runs verification steps from the phase's verification section."
+    - "Last task updates documentation with verification steps."
 ```
 
 ### Step 5: Present for Review
