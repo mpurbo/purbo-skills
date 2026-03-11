@@ -106,6 +106,11 @@ them concise to minimize token consumption.
 
 ```yaml
 context: |
+  ## Artifact Compliance
+  After writing any artifact, re-read each rule from the instructions and verify
+  the written content satisfies every rule. Fix violations before reporting
+  completion. Rules are constraints, not suggestions.
+
   ## Project: <name>
   <1-2 sentence description from project docs>
 
