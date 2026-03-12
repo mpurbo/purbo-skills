@@ -175,9 +175,8 @@ rules:
   tasks:
     - "Order tasks for TDD — test first, then implementation."
     - "Each task must be completable in one TDD cycle (red-green-refactor)."
-    - "Include a gate task at the end matching the phase's gate command."
-    - "Last task runs verification steps from the phase's verification section."
-    - "Last task updates documentation with verification steps."
+    - "Include a gate task that runs the phase's gate command and verification steps."
+    - "After the gate task, include a separate documentation task that: (1) updates docs/conventions.md with newly established contracts, and (2) writes a manual verification guide documenting how to manually verify the phase's output (commands to run, expected output, what to inspect)."
 ```
 
 ### Step 5: Present for Review
