@@ -101,11 +101,15 @@ flowchart TD
         Brain["Brainstorm with AI"]
         SysSpec["System Spec"]
         SubSpec["Subsystem Design Spec<br/>(phases, contracts, review tiers)"]
-        Conv["conventions.md<br/>(after first subsystem)"]
+        Conv["conventions.md"]
 
         Brain --> SysSpec
         SysSpec --> SubSpec
-        SubSpec --> Conv
+        SubSpec -- after first subsystem --> Conv
+    end
+
+    subgraph init_openspec ["OpenSpec Initialization"]
+        Init["openspec init"]
     end
 
     subgraph config_phase ["OpenSpec Setup (per subsystem)"]
@@ -114,7 +118,6 @@ flowchart TD
 
     subgraph phase_loop ["Per-Phase Loop"]
         PhaseCtx["openspec-config<br/>Phase context switch"]
-        Init["openspec init"]
         Proposal["proposal"]
         Specs["specs"]
         Design["design"]
@@ -129,10 +132,11 @@ flowchart TD
     MoreSubs{"More<br/>subsystems?"}
     Done["Done"]
 
-    Conv --> Config
-    Config --> Init
-    PhaseCtx --> Init
-    Init --> Proposal --> Specs --> Design --> Tasks --> Apply
+    SubSpec -- second subsystem onward --> Config
+    Conv --> Init
+    Init --> Config
+    PhaseCtx --> Proposal
+    Config --> Proposal --> Specs --> Design --> Tasks --> Apply
     Apply --> Gate
     Gate -- "No" --> Apply
     Gate -- "Yes" --> Review --> Archive
@@ -143,6 +147,7 @@ flowchart TD
     MoreSubs -- "No" --> Done
 
     style pre_openspec fill:none,stroke:#7c3aed,stroke-dasharray: 5 5,stroke-width:2px,color:#7c3aed
+    style init_openspec fill:none,stroke:#059669,stroke-dasharray: 5 5,stroke-width:2px,color:#059669
     style config_phase fill:none,stroke:#2563eb,stroke-dasharray: 5 5,stroke-width:2px,color:#2563eb
     style phase_loop fill:none,stroke:#059669,stroke-dasharray: 5 5,stroke-width:2px,color:#059669
 
