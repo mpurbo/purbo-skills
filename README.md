@@ -51,7 +51,8 @@ An opinionated AI-assisted development workflow built on top of [OpenSpec](https
 #### The workflow
 
 ```
-1. Brainstorm          -> System Spec (high-level, subsystem boundaries)
+1. Brainstorm          -> System Spec (high-level, subsystem boundaries,
+                          contracts, dependency map)
 2. Deep-dive           -> Subsystem Design Spec (per-subsystem, phases, contracts)
                           Produces conventions.md after first subsystem
 3. Configure OpenSpec  -> config.yaml (project context + phase-scoped context)
@@ -64,7 +65,7 @@ An opinionated AI-assisted development workflow built on top of [OpenSpec](https
 
 | Step | Skill | What Happens |
 |------|-------|-------------|
-| 1. Brainstorming | `superpowers:brainstorming` | Explore intent, architecture, subsystem boundaries. Produces System Spec. |
+| 1. Brainstorming | `superpowers:brainstorming` + `system-spec-brainstorm` | Explore intent and turn a brain-dump into a contract-bounded System Spec with subsystem dependencies and parallelization map. |
 | 2. Subsystem deep-dive | `subsystem-design-spec` | Creates detailed per-subsystem spec with phases, verification guides, and review tiers. After first subsystem, produces `conventions.md` for follow-on consistency. |
 | 3. OpenSpec setup | `openspec-config` | Generates `config.yaml` with project-wide context and rules. Does NOT load the full design spec — only phase-scoped context. |
 | 4. Phase context switch | `openspec-config` (Step 6) | Updates `config.yaml` with current phase section + consumed contract signatures only (~20 lines vs ~1000). |
@@ -86,7 +87,7 @@ System Spec                    <- high-level: subsystem boundaries, tenets
       (one per phase)             tasks, apply, archive
 ```
 
-**System Spec** = what to build and how subsystems relate. Created via brainstorming.
+**System Spec** = what to build and how subsystems relate. Created via `system-spec-brainstorm` alongside `superpowers:brainstorming`.
 
 **conventions.md** = lightweight file (~30 lines) with established naming patterns, section structure, phase coding, and cross-subsystem contracts. Produced after the first subsystem, updated after each subsequent one. Eliminates re-scanning all prior specs.
 
@@ -171,6 +172,22 @@ flowchart TD
     style Done fill:#d1fae5,stroke:#059669,color:#1e293b
 ```
 
+#### system-spec-brainstorm
+
+Turns an early product/architecture brain-dump into a high-level System Spec markdown document for Step 1 of the workflow.
+
+**Covers:** subsystem decomposition by contract boundaries, subsystem dependency mapping, parallel development sequencing, Mermaid dependency diagrams, high-level input/output contracts, fixture/mock/schema validation strategy, and readiness checks before deep-diving with `subsystem-design-spec`.
+
+**Triggers on:** "write a high-level system spec", "system specification", "turn this brain-dump into a spec", "identify subsystems", "subsystem dependencies", "development order", "contract boundaries".
+
+**Key constraints enforced:**
+- The spec remains high-level and does not become an implementation plan
+- Every subsystem has explicit Contract IN / Contract OUT
+- Every subsystem can be developed and tested independently through fixtures, mocks, schemas, APIs, files, or events
+- Dependency map clarifies ordering and parallelism
+- Mermaid diagram mirrors the subsystem dependency map
+- Output is ready for one-subsystem-at-a-time deep dive via `subsystem-design-spec`
+
 #### subsystem-design-spec
 
 Creates detailed per-subsystem technical design specs from a System Spec, with opinionated progressive implementation phases.
@@ -219,6 +236,7 @@ skills/
 ├── fp-rust/                 <- FP family
 ├── fp-kstream-design/       <- FP family
 ├── fp-kstream-implement/    <- FP family
+├── system-spec-brainstorm/  <- Spec-Driven Development
 ├── subsystem-design-spec/   <- Spec-Driven Development
 ├── openspec-config/         <- Spec-Driven Development
 ├── mermaid-pastel-style/    <- Mermaid family
