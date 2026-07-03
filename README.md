@@ -44,7 +44,9 @@ Implement topologies as testable, deterministic code with pure business logic se
 
 ---
 
-### Spec-Driven Development
+### Spec-Driven Development [Deprecated]
+
+Please use [HSDD](https://github.com/mpurbo/hsdd/) instead. It's the evolution of this set of skills into a more systematic and coherent methodology. If you have these skills installed previously, please uninstall them first before starting with HSDD.
 
 An opinionated AI-assisted development workflow built on top of [OpenSpec](https://github.com/fission-ai/openspec). Starts from a high-level System Spec, progressively refines into per-subsystem Design Specs with contract-bounded phases, then feeds each phase into OpenSpec's standard change workflow.
 
